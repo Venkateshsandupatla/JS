@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cart-Quantity</title>
+
+  </head>
+  <body>
+    <p>
+      Cart Quantity
+    </p>
+
+    <!-- On clicking the button it shows the cart quantity -->
+
+    <button onclick="
+      console.log(`Cart Quantity = ${cartQuantity}`);
+    ">
+      Show Quantity
+    </button>
+
+
+    <!--  Onclicking the add to cart button, it increases the cart quantity by 1  -->
+
+    <button onclick="
+      cartQuantity = cartQuantity +1;
+      console.log(`Cart Quantity = ${cartQuantity}`);
+    ">
+      Add to cart
+    </button>
+
+    <!--  Onclicking the +2 button, it increases the cart quantity by 2  -->   
+    <button onclick="
+      cartQuantity = cartQuantity+2;
+      console.log(`Cart Quantity = ${cartQuantity}`);
+    ">
+      +2
+    </button>
+
+    <!--  Onclicking the +3 button, it increases the cart quantity by 3  --> 
+    <button onclick=" 
+      cartQuantity = cartQuantity + 3;
+      console.log(`Cart Quantity = ${cartQuantity}`);
+    ">
+      +3
+    </button>
+
+    
+    <!--  Onclicking the reset button, it resets the cart quantity to 0  --> 
+    <button onclick="
+      cartQuantity = 0;
+      console.log('Cart was Reset');
+      console.log(`Cart Quantity = ${cartQuantity}`);
+    ">
+      Reset Cart
+    </button>
+    <script>
+
+      //  create a varible to store the cart quantity
+      let cartQuantity = 0 ;
+
+
+    </script>
+  </body>
+</html>
