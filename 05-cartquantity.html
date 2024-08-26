@@ -43,6 +43,22 @@
       +3
     </button>
 
+<!--  Onclicking the +4 button, it increases the cart quantity by 4  -->    
+    <button onclick="
+      cartQuantity+=4;
+      console.log(`cart Quantity = ${cartQuantity}`);
+    ">
+      +4
+    </button>
+
+<!--  Onclicking the +5 button, it increases the cart quantity by 5  --> 
+    <button onclick=" 
+      cartQuantity+= 5;
+      console.log(`Cart Quantity = ${cartQuantity}`);
+      ">
+        +5
+    </button>
+
     
     <!--  Onclicking the reset button, it resets the cart quantity to 0  --> 
     <button onclick="
@@ -52,6 +68,32 @@
     ">
       Reset Cart
     </button>
+<!-- Onclicking the button will remove an item from the cart -->
+    <button onclick="
+      cartQuantity--;
+      console.log(`cartQuantity = ${cartQuantity}`);
+    ">
+      Remove from cart
+    </button>
+
+    <!-- onclicking button will decrease the cart quantity by 2 -->
+     <button onclick="
+      cartQuantity-=2;
+      console.log(`cartQuantity = ${cartQuantity}`);
+     ">
+      -2
+     </button>
+    
+<!-- onclicking button will decrease the cartquantity by 3 -->
+    <button onclick="
+      cartQuantity-=3;
+      console.log(`cartQuantity=${cartQuantity}`);
+    ">
+      -3
+    </button>
+    
+    
+    
     <script>
 
       //  create a varible to store the cart quantity
