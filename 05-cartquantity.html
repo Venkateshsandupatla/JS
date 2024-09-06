@@ -21,60 +21,40 @@
     <!--  Onclicking the add to cart button, it increases the cart quantity by 1  -->
 
     <button onclick="
-    if(cartQuantity + 1>10){
-      alert('Cart is Full');
-    }else{
-      cartQuantity = cartQuantity +1;
-      console.log(`Cart Quantity = ${cartQuantity}`);
-    }
+          updateCartQuantity(1);
+
     ">
       Add to cart
     </button>
 
     <!--  Onclicking the +2 button, it increases the cart quantity by 2  -->   
     <button onclick="
-      if(cartQuantity + 2>10){
-        alert('Cart is full');
-      }else{
-      cartQuantity = cartQuantity+2;
-      console.log(`Cart Quantity = ${cartQuantity}`);
-      }
+         updateCartQuantity(2);
+
     ">
       +2
     </button>
 
     <!--  Onclicking the +3 button, it increases the cart quantity by 3  --> 
     <button onclick=" 
-      if(cartQuantity + 3>10){
-        alert(' Cart is Full');
-      }else{
-      cartQuantity = cartQuantity + 3;
-      console.log(`Cart Quantity = ${cartQuantity}`);
-      }
+      updateCartQuantity(3);
+
     ">
       +3
     </button>
 
 <!--  Onclicking the +4 button, it increases the cart quantity by 4  -->    
     <button onclick="
-    if(cartQuantity + 4 >10){
-      alert('cart is full');
-    }else{
-      cartQuantity+=4;
-      console.log(`cart Quantity = ${cartQuantity}`);
-    }
+       updateCartQuantity(4);
+
     ">
       +4
     </button>
 
 <!--  Onclicking the +5 button, it increases the cart quantity by 5  --> 
     <button onclick=" 
-      if(cartQuantity + 5>10){
-        alert('Cart is Full');
-      }else{
-      cartQuantity+= 5;
-      console.log(`Cart Quantity = ${cartQuantity}`);
-      }
+        updateCartQuantity(5);
+
       ">
         +5
     </button>
@@ -90,36 +70,23 @@
     </button>
 <!-- Onclicking the button will remove an item from the cart -->
     <button onclick="
-      if(cartQuantity--<0){
-        alert('Not enough items in the cart');
-      }else{
-      cartQuantity--;
-      console.log(`cartQuantity = ${cartQuantity}`);
-      }
+         updateCartQuantity(-1);
+
     ">
       Remove from cart
     </button>
 
     <!-- onclicking button will decrease the cart quantity by 2 -->
      <button onclick="
-      if(cartQuantity -2<0){
-        alert('Not enough items in the cart');
-      }else{
-      cartQuantity-=2;
-      console.log(`cartQuantity = ${cartQuantity}`);
-      }
+       updateCartQuantity(-2);
+
      ">
       -2
      </button>
     
 <!-- onclicking button will decrease the cartquantity by 3 -->
     <button onclick="
-      if(cartQuantity -3<0){
-        alert('Not enough items in the cart');
-      }else{
-      cartQuantity-=3;
-      console.log(`cartQuantity=${cartQuantity}`);
-      }
+      updateCartQuantity(-3);
     ">
       -3
     </button>
@@ -130,6 +97,23 @@
 
       //  create a varible to store the cart quantity
       let cartQuantity = 0 ;
+
+      function updateCartQuantity(value){
+        if(cartQuantity + value>10){
+          alert('Cart is Full');
+          return;
+      } 
+      if(cartQuantity + value <0){
+        alert('Not enough items in the cart');
+        return;
+
+      } 
+
+          cartQuantity+=value;
+          console.log(`cartQuantity=${cartQuantity}`);
+
+      
+    }
 
     </script>
   </body>

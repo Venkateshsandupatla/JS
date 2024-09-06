@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Functions!</title>
+  </head>
+  <body>
+    
+    <script>
+      function function1(){
+        console.log("Hello World!");
+        console.log(2+6);
+      }
+
+      function1();
+
+      // default value of taxPercent is 0.1
+      function calculateTax(cost, taxPercent = 0.1){
+        console.log(cost * taxPercent);
+      } 
+
+      calculateTax(5000 , 0.1);
+      calculateTax(2000);
+
+    </script>
+
+  </body>
+</html>
