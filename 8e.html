@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      8e - example
+    </title>
+  </head>
+  <body>
+    <script>
+      const product1 = {
+        name: 'bat',
+        price: 1000
+      };
+      const product2 = {
+        name: 'bat',
+        price: 1000
+      };
+      const product3 = {
+        name: 'vollyball',
+        price: 1689
+      };
+
+      function isSameProduct(a,b){
+        if(a.name == b.name && a.price == b.price){
+          return true;
+        }else{
+          return false;
+        }
+      }
+      console.log( isSameProduct(product1,product2));
+      console.log( isSameProduct(product1,product3));
+
+    </script>
+  </body>
+</html>

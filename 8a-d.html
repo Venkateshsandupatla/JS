@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>8a-example</title>
+
+  </head>
+  <body>
+    
+    <script>
+
+     const product ={
+        name: 'basketball',
+        price: 2095,
+        ['delivery-time']: '3 DAYS',
+      };
+      console.log(product);
+      product.price+=500;
+      console.log(product);
+
+
+      const product1 ={
+        name: 'bat',
+        price: 1000
+      };
+      const product2 = {
+        name: 'ball',
+        price: 10
+      };
+      
+      function comparePrice(a,b){
+        if(a<b){
+          return a;
+        }else{
+          return b;
+        }
+        
+      }
+
+      const result = comparePrice(product1.price,product2.price);
+
+      if(result==product1.price){
+        console.log(`${product1.name} is less expensive product` );
+      }else if (result== product2.price){
+        console.log(`${product2.name} is less expensive product`);
+      }
+    </script>
+  </body>
+</html>

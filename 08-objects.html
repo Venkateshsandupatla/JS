@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>objects example</title>
+  </head>
+  <body>
+
+    
+
+    <script>
+      const products = {
+        name: 'socks',
+        price: 1090
+      };
+      console.log(products.name);
+      console.log(products.price);
+          
+      products.age = 5;
+      console.log(products);
+
+
+      const product2={
+        name:'short',
+
+        // we can also use the bracket notation for creating the property and values
+       //['delivery-time']: '1-day'
+       // we can remove the bracket also
+       'delivery-time': '1-day',
+
+       // object inside object (Nested-objects)
+       rating: {
+        stars: 4.5,
+        count: 87
+       },
+
+       // we can also use the fucntion inside an object
+       // function inside an object is known as a 'METHOD'
+       fun: function function1(){
+        console.log('Fucnction inside an object');
+       }
+      };
+      console.log(product2.name);
+      // the below one is bracket notation, same as the above one to retrieve the name from the product2 object
+
+      console.log(product2['name']);
+
+      // Bracket notation let us use properties that dont work with dot notations.
+      // like delivery-time its a property but the dot notation thinks to substract delivery from time, so we use the bracket notation ['delivery-time'] 
+      console.log(product2['delivery-time']);
+      
+      // which one to use?
+      // - we use by deafult dot notation, but for properties that dont work with dot notation we use the bracket notations.
+
+      console.log(product2.rating.stars);
+
+      product2.fun();
+      
+
+       // converting javascriptt syntax to json
+       // json dosent support functions
+       console.log(JSON.stringify(product2));
+
+       // anothe way to convert json to js
+       const jsonstring = JSON.stringify(product2);
+       console.log(JSON.parse(jsonstring));
+
+
+       // varaibles are temporary, when we refresh the tab all varaibles will be erased. so to solv ethis we have the 'local storage'
+       //local stprage only supports the strings
+       localStorage.setItem('message','hello');
+       console.log( localStorage.getItem('message'));
+
+
+       // js automatcicall wraps a string into objects, this is known as auto-boxing, so string has the length function, touppercase function amd so on,...
+
+       console.log('hello'.length );
+       console.log('hello'.toUpperCase());
+      // auto boxing works with all like integrs too.
+      // But auto boxing dosent work with null and undefined
+      // null means we intentionally want something to be empty
+ 
+
+
+      // objects are references
+      const object1  = {
+        message: 'hello',
+      };
+      // it is not copying the object1 into object2 , it is just giving/passing the same reference to object2
+
+      const object2 = object1;
+      // so let's see like changing the message value from objectr1
+      object1.message = 'good job!';
+
+      //
+      console.log(object1);
+
+      // even if we change only the value in object1 meggsae it aslo change in object2 becasue we dont copy objects, it just pass the reference to message 
+      console.log(object2);
+
+      const object3 = {
+        message: 'good job!'
+      };
+
+      // we know that message in obj1 and 3 are 'good job! but they objects are not same becaouse objects works as references, so they both have different references for messages'
+      console.log(object1 == object3);
+      // but obj1,2 messages are same because they erefer to the same values
+      console.log(object1==object2);
+
+
+      const object4 = {
+        message: 'Good job!',
+        price: 799
+      }
+
+      // now we want to create a varaible message and sttore the value of obj4.message in that, for this we have a shortcut
+
+      // const message = object4.message;
+      // the below will create a variable message and pull the value of message from object4 in puts into the new varaible
+      const {message , price} = object4;
+
+      // lets console the varaibles we created by above shortcuts
+      // the above we call it as Destrcturing
+      // Destructiong makes us to easier way to take properties out of an object
+      console.log(message);
+      console.log(price);
+
+
+      // Shorthand property
+
+      const object5 = {
+        // we want the value of messahe varaible here
+        // here we create the message property and the value is from the above message varaible
+        
+        // message: message
+
+        // if the property and varauble is same we have an shortcut for this
+        // just type one thing, this called as shorthnad 
+        message,
+
+        method: function function1(){
+          console.log('method')
+        },
+        // we have shortycut to write the functions
+
+        method1(){
+          console.log('method1');
+        }
+      };
+
+      console.log(object5);
+
+      object5.method();
+      object5.method1();
+
+
+
+    </script>
+    
+  </body>
+</html> 
