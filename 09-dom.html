@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      dom - example
+    </title>
+  </head>
+  <body>
+    <button>
+      first-button
+    </button>
+    <button class="js-button">
+      second -button
+    </button>
+    
+    <script>
+
+
+      // console.log(document.title);
+      // console.log(document.body);
+      /*
+      // this line replaces everyting in the page to just only hello!!
+      document.body.innerHTML = 'hello';
+      // this will chnages the title of the page!
+      document.title = 'Good Job!!';
+
+      */
+
+      // console.log(document.body.innerHTML);
+
+      // document.body.innerHTML = '<button> good job js! </button>';
+
+
+     console.log( document.querySelector('button'));
+     document.querySelector('button')
+      .innerHTML = 'chnaged-button';
+
+      const buttonELement = document.querySelector('.js-button').innerHTML = 'chnaged js-button';
+      console.log(buttonELement);
+
+    </script>
+</html>
