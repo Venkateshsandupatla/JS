@@ -40,7 +40,10 @@
         color: white;
         cursor: pointer;
       }
-    
+      
+      .error-message{
+        color: red;
+      }
     </style>
 
   </head>
@@ -75,6 +78,7 @@
       Calculate
     </button>
     <p class="js-total-cost"></p>
+    <p class="js-error-message error-message"></p>
     <script>
 
       function handleCostKeydown(event){
@@ -86,13 +90,24 @@
       function calculateCost(){
         const inputElement = document.querySelector('.js-input');
         // convert the number to cents by * 100
-        let cost = Number( inputElement.value);
-        if(cost<40){
-          cost = cost + 10;
-          
+        let cost = Number( inputElement.value)*100;
+
+        // First, reset all previous messages
+        document.querySelector('.js-total-cost').innerHTML='';
+        document.querySelector('.js-error-message').innerHTML='';
+        //  // If we display an error, we can use return to
+          // end this function immediately. This is called
+          // an "early return" and it makes the code cleaner
+          // because it reduces nesting / indents.
+        if(cost<0){
+          document.querySelector('.js-error-message').innerHTML= 'Error: cost cannot be less than $0';
+          return;
+        }
+        if(cost<4000){
+          cost = cost + 1000; 
         }
 
-        document.querySelector('.js-total-cost').innerHTML = `$${cost}`;
+        document.querySelector('.js-total-cost').innerHTML = `$${cost/100}`;
       }
 
         function Subscribe(){

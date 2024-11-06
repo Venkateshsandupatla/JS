@@ -3,28 +3,29 @@
   <head>
     <title>calculator</title>
     
-   
+    <link rel="stylesheet" href="styles/10-calculator-final.css">
   </head>
 
   <body>
 
+    <p class="js-calculation calculation-display"></p>
     <p>
-      <button onclick="
+      <button class="claculator-button gray-button" onclick="
         updateCalculation('1');
       ">
       1
     </button>
-    <button onclick="
+    <button   class="claculator-button gray-button" onclick="
       updateCalculation('2');
     ">
       2
     </button>
-    <button onclick="
+    <button  class="claculator-button gray-button" onclick="
       updateCalculation('3'); 
       ">
       3
     </button>
-    <button onclick="
+    <button  class="claculator-button orange-button" onclick="
       updateCalculation('+');
       ">
       +
@@ -36,22 +37,22 @@
     </p>
 
     <p>
-      <button onclick="
+      <button  class="claculator-button gray-button" onclick="
       updateCalculation('4');
       ">
       4
     </button>
-    <button onclick="
+    <button  class="claculator-button gray-button" onclick="
     updateCalculation('5');
     ">
       5
     </button>
-    <button onclick="
+    <button  class="claculator-button gray-button" onclick="
       updateCalculation('6');
     ">
       6
     </button>
-    <button onclick="
+    <button  class="claculator-button orange-button" onclick="
       updateCalculation('-');
     ">
       -
@@ -64,22 +65,22 @@
 
 
     <p>
-      <button onclick="
+      <button class="claculator-button gray-button" onclick="
       updateCalculation('7');
       ">
       7
     </button>
-    <button onclick="
+    <button  class="claculator-button gray-button" onclick="
       updateCalculation('8');
     ">
       8
     </button>
-    <button onclick="
+    <button  class="claculator-button gray-button" onclick="
      updateCalculation('9');
     ">
       9
     </button>
-    <button onclick="
+    <button  class="claculator-button orange-button" onclick="
       updateCalculation('*');
     ">
       *
@@ -91,21 +92,22 @@
     
     <p>
 
-      <button onclick="
+      <button  class="claculator-button gray-button" onclick="
        updateCalculation('0');
         ">
           0
       </button>
 
-      <button onclick="
+      <button  class="claculator-button gray-button" onclick="
        updateCalculation('.');
       ">
       .
      </button>
-      <button onclick="
+      <button  class="claculator-button gray-button" onclick="
           calculation = eval(calculation);
-          console.log(calculation);
-
+         // Instead of showing it in the console i want it in the page
+          //console.log(calculation);
+          displayCalculation();
           // we will save our calculation in the local storage ghere..
 
           localStorage.setItem('calculation', calculation);
@@ -113,7 +115,7 @@
           =
       </button>
 
-      <button onclick="
+      <button  class="claculator-button orange-button" onclick="
        updateCalculation('/');
       ">
       /
@@ -121,9 +123,11 @@
     </p>
 
     <p>
-      <button onclick="
+      <button  class="claculator-button gray-button clear-button" onclick="
           calculation = '';
-          console.log(calculation);
+          // Same instead of showing it in the console display it on the page
+          //console.log(calculation);
+          displayCalculation();
 
           // we will save our calculation in the local storage ghere..
 
@@ -140,22 +144,10 @@
     
     
     
-    <script>
+    <script src="scripts/10-calculator-final.js">
 
       
-      let calculation = localStorage.getItem('calculation') || '';
-
-      function updateCalculation(value){
-        
-        calculation+=value;
-        console.log(calculation);
-        localStorage.setItem('calculation', calculation);
-      }
-
-      // to resuse the code
-      function saveCalculation(){
-        localStorage.setItem('calculation',calculation);
-      }
+      
     </script>
   </body>
 </html>
